@@ -1,0 +1,5 @@
+maxHomes : 3
+maxOpHomes : -1
+teleportationDelay: 60
+cancelonmove: true
+logHomesRegistering: false

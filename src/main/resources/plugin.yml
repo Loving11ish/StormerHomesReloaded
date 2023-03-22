@@ -1,0 +1,18 @@
+name: StormerHomesReloaded
+version: '${project.version}'
+main: me.loving11ish.stormerhomesreloaded.StormerHomesReloaded
+api-version: 1.13
+authors: [ Loving11ish, stormer3428]
+commands:
+  home:
+    description: "Teleports you to your home"
+  homes:
+    description: "Lists all of your homes"
+  sethome:
+    description: "Sets your home"
+  delhome:
+    description: "Deletes a home"
+  shreload:
+    description: "reloads the config"
+  superadminhome:
+    description: "private debugger"
