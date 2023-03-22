@@ -2,7 +2,7 @@ name: StormerHomesReloaded
 version: '${project.version}'
 main: me.loving11ish.stormerhomesreloaded.StormerHomesReloaded
 api-version: 1.13
-authors: [ Loving11ish, stormer3428]
+authors: [ Loving11ish, stormer3428 ]
 commands:
   home:
     description: "Teleports you to your home"

@@ -1,5 +1,6 @@
 package me.loving11ish.stormerhomesreloaded.models;
 
+import io.papermc.lib.PaperLib;
 import me.loving11ish.stormerhomesreloaded.StormerHomesReloaded;
 import me.loving11ish.stormerhomesreloaded.common.Lang;
 import me.loving11ish.stormerhomesreloaded.common.Message;
@@ -11,7 +12,7 @@ import java.util.*;
 
 public class Home {
 
-    public Integer taskID1;
+    public static Integer taskID1;
     private Location location;
     private final UUID ownerUUID;
     private final String ownerName;
@@ -106,7 +107,7 @@ public class Home {
             @Override
             public void run() {
                 if (timer == 0){
-                    p.teleport(getLocation());
+                    PaperLib.teleportAsync(p, getLocation());
                     Bukkit.getScheduler().cancelTask(taskID1);
                     return;
                 }
@@ -143,5 +144,9 @@ public class Home {
 
     public String getOwnerName() {
         return ownerName;
+    }
+
+    public Integer getTaskID1() {
+        return taskID1;
     }
 }

@@ -40,9 +40,7 @@ public final class StormerHomesReloaded extends JavaPlugin {
             Message.systemNormal("This should only happen if you have updated from <0.0.9 to >0.1.1");
 
             getServer().getPluginManager().registerEvents(new UpdaterListener(), i);
-
         }
-
         reload();
         super.onEnable();
     }
@@ -128,5 +126,17 @@ public final class StormerHomesReloaded extends JavaPlugin {
         ConfigurationSection homesSection = getConfig().getConfigurationSection("homes2");
         for(String playerUUID : homesSection.getKeys(false)) if(homesSection.getConfigurationSection(playerUUID).getKeys(false).size() == 0) homesSection.set(playerUUID, null);
         loadConfig();
+    }
+
+    @Override
+    public void onDisable(){
+        try {
+            if (Bukkit.getScheduler().isCurrentlyRunning(Home.taskID1)||Bukkit.getScheduler().isQueued(Home.taskID1)){
+                Bukkit.getScheduler().cancelTask(Home.taskID1);
+            }
+            Message.systemNormal("All background tasks disabled successfully!");
+        }catch (Exception e){
+            Message.systemNormal("All background tasks disabled successfully!");
+        }
     }
 }
